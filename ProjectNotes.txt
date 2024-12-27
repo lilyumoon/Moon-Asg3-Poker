@@ -1,0 +1,29 @@
+Grading:
+	B:
+		*The Game must keep track of the Players balance.
+		*The Game must let the player change their bet before the initial draw, and not let the player change the bet until the round is over.
+		*The Game must correctly score the hand.
+	A:
+		*The UI must be easy to work with and does not have any MessageBoxes
+		*All calculations must be 100% correct
+		*Method, Class and Variable names following course coding standards
+
+Videos:
+	* https://northwoodtech.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=117f80f0-4f40-48c5-82d9-afa900e7ccd4
+	* https://northwoodtech.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=520aaec8-9583-4f70-8746-ae3d00af2fae
+	* https://northwoodtech.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4f46974e-0977-450d-9070-afb000e8324a
+
+
+
+Classes:
+	Card.cs
+		*
+
+	Deck.cs
+		*
+		
+	Hand.cs
+		*
+
+	Play.cs
+		*

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Moon_Asg3_Poker
 {
-    internal class Card
+    public class Card
     {
+
+
     }
 }

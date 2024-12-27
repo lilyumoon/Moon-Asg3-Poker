@@ -16,5 +16,10 @@ namespace Moon_Asg3_Poker
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
