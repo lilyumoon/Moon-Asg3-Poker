@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBoxCard1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxCard2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxCard3 = new System.Windows.Forms.PictureBox();
@@ -49,7 +49,7 @@
             this.labelTotalCredits = new System.Windows.Forms.Label();
             this.labelAmountWonCounter = new System.Windows.Forms.Label();
             this.labelTotalCreditsCounter = new System.Windows.Forms.Label();
-            this.labelDescription = new System.Windows.Forms.Label();
+            this.labelHandResult = new System.Windows.Forms.Label();
             this.imageListCards = new System.Windows.Forms.ImageList(this.components);
             this.dataGridViewScoringInfo = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCard1)).BeginInit();
@@ -114,45 +114,50 @@
             // labelCard1
             // 
             this.labelCard1.AutoSize = true;
-            this.labelCard1.Location = new System.Drawing.Point(50, 180);
+            this.labelCard1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCard1.Location = new System.Drawing.Point(42, 180);
             this.labelCard1.Name = "labelCard1";
-            this.labelCard1.Size = new System.Drawing.Size(66, 13);
+            this.labelCard1.Size = new System.Drawing.Size(78, 13);
             this.labelCard1.TabIndex = 5;
             this.labelCard1.Text = "*** HELD ***";
             // 
             // labelCard2
             // 
             this.labelCard2.AutoSize = true;
-            this.labelCard2.Location = new System.Drawing.Point(178, 180);
+            this.labelCard2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCard2.Location = new System.Drawing.Point(172, 180);
             this.labelCard2.Name = "labelCard2";
-            this.labelCard2.Size = new System.Drawing.Size(66, 13);
+            this.labelCard2.Size = new System.Drawing.Size(78, 13);
             this.labelCard2.TabIndex = 6;
             this.labelCard2.Text = "*** HELD ***";
             // 
             // labelCard3
             // 
             this.labelCard3.AutoSize = true;
-            this.labelCard3.Location = new System.Drawing.Point(307, 180);
+            this.labelCard3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCard3.Location = new System.Drawing.Point(306, 180);
             this.labelCard3.Name = "labelCard3";
-            this.labelCard3.Size = new System.Drawing.Size(66, 13);
+            this.labelCard3.Size = new System.Drawing.Size(78, 13);
             this.labelCard3.TabIndex = 7;
             this.labelCard3.Text = "*** HELD ***";
             // 
             // labelCard4
             // 
             this.labelCard4.AutoSize = true;
-            this.labelCard4.Location = new System.Drawing.Point(436, 180);
+            this.labelCard4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCard4.Location = new System.Drawing.Point(432, 180);
             this.labelCard4.Name = "labelCard4";
-            this.labelCard4.Size = new System.Drawing.Size(66, 13);
+            this.labelCard4.Size = new System.Drawing.Size(78, 13);
             this.labelCard4.TabIndex = 8;
             this.labelCard4.Text = "*** HELD ***";
             // 
             // labelCard5
             // 
             this.labelCard5.AutoSize = true;
-            this.labelCard5.Location = new System.Drawing.Point(568, 180);
+            this.labelCard5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCard5.Location = new System.Drawing.Point(562, 180);
             this.labelCard5.Name = "labelCard5";
-            this.labelCard5.Size = new System.Drawing.Size(66, 13);
+            this.labelCard5.Size = new System.Drawing.Size(78, 13);
             this.labelCard5.TabIndex = 9;
             this.labelCard5.Text = "*** HELD ***";
             // 
@@ -238,14 +243,14 @@
             this.labelTotalCreditsCounter.TabIndex = 16;
             this.labelTotalCreditsCounter.Text = "#";
             // 
-            // labelDescription
+            // labelHandResult
             // 
-            this.labelDescription.AutoSize = true;
-            this.labelDescription.Location = new System.Drawing.Point(27, 265);
-            this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(60, 13);
-            this.labelDescription.TabIndex = 17;
-            this.labelDescription.Text = "Description";
+            this.labelHandResult.AutoSize = true;
+            this.labelHandResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHandResult.Location = new System.Drawing.Point(27, 265);
+            this.labelHandResult.Name = "labelHandResult";
+            this.labelHandResult.Size = new System.Drawing.Size(0, 16);
+            this.labelHandResult.TabIndex = 17;
             // 
             // imageListCards
             // 
@@ -313,24 +318,24 @@
             this.dataGridViewScoringInfo.AllowUserToResizeRows = false;
             this.dataGridViewScoringInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewScoringInfo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewScoringInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewScoringInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewScoringInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewScoringInfo.ColumnHeadersVisible = false;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewScoringInfo.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewScoringInfo.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewScoringInfo.Enabled = false;
             this.dataGridViewScoringInfo.Location = new System.Drawing.Point(30, 360);
             this.dataGridViewScoringInfo.MultiSelect = false;
@@ -353,7 +358,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 544);
             this.Controls.Add(this.dataGridViewScoringInfo);
-            this.Controls.Add(this.labelDescription);
+            this.Controls.Add(this.labelHandResult);
             this.Controls.Add(this.labelTotalCreditsCounter);
             this.Controls.Add(this.labelAmountWonCounter);
             this.Controls.Add(this.labelTotalCredits);
@@ -405,7 +410,7 @@
         private System.Windows.Forms.Label labelTotalCredits;
         private System.Windows.Forms.Label labelAmountWonCounter;
         private System.Windows.Forms.Label labelTotalCreditsCounter;
-        private System.Windows.Forms.Label labelDescription;
+        private System.Windows.Forms.Label labelHandResult;
         private System.Windows.Forms.ImageList imageListCards;
         private System.Windows.Forms.DataGridView dataGridViewScoringInfo;
     }

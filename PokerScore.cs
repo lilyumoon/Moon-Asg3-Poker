@@ -35,8 +35,6 @@ using System.Threading.Tasks;
         private String handResult = "Unknown";
         private List<MiniCard> listOfCards = new List<MiniCard>();
 
-
-
         // Constructor
         /// <summary>
         /// Expects a five strings each is a card string Rank + Suite
