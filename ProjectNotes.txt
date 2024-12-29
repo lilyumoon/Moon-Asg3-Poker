@@ -17,13 +17,37 @@ Videos:
 
 Classes:
 	Card.cs
-		*
+		Properties:
+			* rank
+			* suit
+			* imageIndex
+		Methods:
+			* constructor 
+				(rank, suit, image index)
+			* tostring (ex. Ace of Clubs, Seven of Diamonds, etc)
+			* getRankSuit (1C, 7D, etc)
 
 	Deck.cs
-		*
-		
+		* Similar to Blackjack assignment, but not trying to do as much
+		* Hand.cs class will offload some of the extraneous functionality
+
+		Properties:
+			* cardList
+
+		Methods:
+			* constructor
+			* resetToFullDeck
+			* addCardToDeck
+			* drawCardFromDeck
+
 	Hand.cs
-		*
+		Properties:
+			* cardList
+			* 
+		Methods:
+			* constructor
+				(max capacity -- not necessary here as poker is limited to 5, but might be nice for other applications)
+				()
 
 	Play.cs
 		*
