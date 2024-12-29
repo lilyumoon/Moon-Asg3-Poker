@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Moon_Asg3_Poker
 {
-    internal class Play
+    internal class Game
     {
     }
 }

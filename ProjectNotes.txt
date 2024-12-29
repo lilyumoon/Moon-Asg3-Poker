@@ -27,27 +27,33 @@ Classes:
 			* tostring (ex. Ace of Clubs, Seven of Diamonds, etc)
 			* getRankSuit (1C, 7D, etc)
 
-	Deck.cs
-		* Similar to Blackjack assignment, but not trying to do as much
+	CardContainer.cs
+		* Contains common properties and methods that Deck.cs and Hand.cs share
+		* cards
+		* addCard
+		* clearCards
+
+	Deck.cs (extends CardContainer)
+		* Similar to Blackjack assignment's Deck.cs, but not trying to do as much
 		* Hand.cs class will offload some of the extraneous functionality
 
 		Properties:
-			* cardList
-
 		Methods:
 			* constructor
-			* resetToFullDeck
-			* addCardToDeck
+			* resetDeck
 			* drawCardFromDeck
 
-	Hand.cs
+	Hand.cs (extends CardContainer)
 		Properties:
-			* cardList
-			* 
-		Methods:
-			* constructor
-				(max capacity -- not necessary here as poker is limited to 5, but might be nice for other applications)
-				()
+			* cards
+			* heldStates
 
-	Play.cs
-		*
+		Methods:
+			* constructor (List of cards)
+			* replaceCard (index of card to replace)
+
+	Game.cs
+		* general gameflow
+		Properties:
+			* credits
+			* bet
