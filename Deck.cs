@@ -72,6 +72,8 @@ namespace Moon_Asg3_Poker
             return card;
         }
 
+        // TODO: should this be moved to Hand.cs class?
+
         /// <summary>
         /// Replaces the card at a specified position in cardList with a new card,
         /// given that there is already a card in that position.
