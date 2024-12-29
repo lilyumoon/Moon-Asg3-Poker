@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBoxCard1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxCard2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxCard3 = new System.Windows.Forms.PictureBox();
@@ -47,6 +49,7 @@
             this.labelTotalCreditsCounter = new System.Windows.Forms.Label();
             this.labelDescription = new System.Windows.Forms.Label();
             this.labelBetAmount = new System.Windows.Forms.Label();
+            this.imageListCards = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCard2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCard3)).BeginInit();
@@ -234,6 +237,64 @@
             this.labelBetAmount.TabIndex = 18;
             this.labelBetAmount.Text = "labelBetAmount";
             // 
+            // imageListCards
+            // 
+            this.imageListCards.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListCards.ImageStream")));
+            this.imageListCards.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListCards.Images.SetKeyName(0, "Ace_Clubs.bmp");
+            this.imageListCards.Images.SetKeyName(1, "Ace_Diamonds.bmp");
+            this.imageListCards.Images.SetKeyName(2, "Ace_Hearts.bmp");
+            this.imageListCards.Images.SetKeyName(3, "Ace_Spades.bmp");
+            this.imageListCards.Images.SetKeyName(4, "2_Clubs.bmp");
+            this.imageListCards.Images.SetKeyName(5, "2_Diamonds.bmp");
+            this.imageListCards.Images.SetKeyName(6, "2_Hearts.bmp");
+            this.imageListCards.Images.SetKeyName(7, "2_Spades.bmp");
+            this.imageListCards.Images.SetKeyName(8, "3_Clubs.bmp");
+            this.imageListCards.Images.SetKeyName(9, "3_Diamonds.bmp");
+            this.imageListCards.Images.SetKeyName(10, "3_Hearts.bmp");
+            this.imageListCards.Images.SetKeyName(11, "3_Spades.bmp");
+            this.imageListCards.Images.SetKeyName(12, "4_Clubs.bmp");
+            this.imageListCards.Images.SetKeyName(13, "4_Diamonds.bmp");
+            this.imageListCards.Images.SetKeyName(14, "4_Hearts.bmp");
+            this.imageListCards.Images.SetKeyName(15, "4_Spades.bmp");
+            this.imageListCards.Images.SetKeyName(16, "5_Clubs.bmp");
+            this.imageListCards.Images.SetKeyName(17, "5_Diamonds.bmp");
+            this.imageListCards.Images.SetKeyName(18, "5_Hearts.bmp");
+            this.imageListCards.Images.SetKeyName(19, "5_Spades.bmp");
+            this.imageListCards.Images.SetKeyName(20, "6_Clubs.bmp");
+            this.imageListCards.Images.SetKeyName(21, "6_Diamonds.bmp");
+            this.imageListCards.Images.SetKeyName(22, "6_Hearts.bmp");
+            this.imageListCards.Images.SetKeyName(23, "6_Spades.bmp");
+            this.imageListCards.Images.SetKeyName(24, "7_Clubs.bmp");
+            this.imageListCards.Images.SetKeyName(25, "7_Diamonds.bmp");
+            this.imageListCards.Images.SetKeyName(26, "7_Hearts.bmp");
+            this.imageListCards.Images.SetKeyName(27, "7_Spades.bmp");
+            this.imageListCards.Images.SetKeyName(28, "8_Clubs.bmp");
+            this.imageListCards.Images.SetKeyName(29, "8_Diamonds.bmp");
+            this.imageListCards.Images.SetKeyName(30, "8_Hearts.bmp");
+            this.imageListCards.Images.SetKeyName(31, "8_Spades.bmp");
+            this.imageListCards.Images.SetKeyName(32, "9_Clubs.bmp");
+            this.imageListCards.Images.SetKeyName(33, "9_Diamonds.bmp");
+            this.imageListCards.Images.SetKeyName(34, "9_Hearts.bmp");
+            this.imageListCards.Images.SetKeyName(35, "9_Spades.bmp");
+            this.imageListCards.Images.SetKeyName(36, "10_Clubs.bmp");
+            this.imageListCards.Images.SetKeyName(37, "10_Diamonds.bmp");
+            this.imageListCards.Images.SetKeyName(38, "10_Hearts.bmp");
+            this.imageListCards.Images.SetKeyName(39, "10_Spades.bmp");
+            this.imageListCards.Images.SetKeyName(40, "Jack_Clubs.bmp");
+            this.imageListCards.Images.SetKeyName(41, "Jack_Diamonds.bmp");
+            this.imageListCards.Images.SetKeyName(42, "Jack_Hearts.bmp");
+            this.imageListCards.Images.SetKeyName(43, "Jack_Spades.bmp");
+            this.imageListCards.Images.SetKeyName(44, "Queen_Clubs.bmp");
+            this.imageListCards.Images.SetKeyName(45, "Queen_Diamonds.bmp");
+            this.imageListCards.Images.SetKeyName(46, "Queen_Hearts.bmp");
+            this.imageListCards.Images.SetKeyName(47, "Queen_Spades.bmp");
+            this.imageListCards.Images.SetKeyName(48, "King_Clubs.bmp");
+            this.imageListCards.Images.SetKeyName(49, "King_Diamonds.bmp");
+            this.imageListCards.Images.SetKeyName(50, "King_Hearts.bmp");
+            this.imageListCards.Images.SetKeyName(51, "King_Spades.bmp");
+            this.imageListCards.Images.SetKeyName(52, "Backface_Blue.bmp");
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,6 +354,7 @@
         private System.Windows.Forms.Label labelTotalCreditsCounter;
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.Label labelBetAmount;
+        private System.Windows.Forms.ImageList imageListCards;
     }
 }
 
