@@ -8,23 +8,12 @@ namespace Moon_Asg3_Poker
 {
     internal class Hand : CardContainer
     {
-        /// <summary>
-        /// The list of bools correlating to the 'held' state of each Card in the cards list.
-        /// </summary>
-        private List<bool> heldStates = new List<bool>();
 
         public Hand() { }
 
         public Hand(List<Card> cards)
         {
             this.cards = cards;
-            foreach (Card card in cards)
-                heldStates.Add(false);
-        }
-
-        public void toggleCardHeldState(int cardListIndex)
-        {
-            heldStates[cardListIndex] = !heldStates[cardListIndex];
         }
 
         /// <summary>
@@ -39,6 +28,18 @@ namespace Moon_Asg3_Poker
                 cards[cardIndex] = newCard;
         }
 
+        public List<string> getRankSuits()
+        {
+            List<string> rankSuits = new List<string>
+            {
+                cards[0].getRankSuit(),
+                cards[1].getRankSuit(),
+                cards[2].getRankSuit(),
+                cards[3].getRankSuit(),
+                cards[4].getRankSuit()
+            };
+            return rankSuits;
+        }
 
     }
 }

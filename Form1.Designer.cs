@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBoxCard1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxCard2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxCard3 = new System.Windows.Forms.PictureBox();
@@ -65,42 +65,52 @@
             // pictureBoxCard1
             // 
             this.pictureBoxCard1.Location = new System.Drawing.Point(30, 30);
+            this.pictureBoxCard1.MinimumSize = new System.Drawing.Size(100, 140);
             this.pictureBoxCard1.Name = "pictureBoxCard1";
             this.pictureBoxCard1.Size = new System.Drawing.Size(100, 140);
             this.pictureBoxCard1.TabIndex = 0;
             this.pictureBoxCard1.TabStop = false;
+            this.pictureBoxCard1.Click += new System.EventHandler(this.pictureBoxCard1_Click);
             // 
             // pictureBoxCard2
             // 
             this.pictureBoxCard2.Location = new System.Drawing.Point(160, 30);
+            this.pictureBoxCard2.MinimumSize = new System.Drawing.Size(100, 140);
             this.pictureBoxCard2.Name = "pictureBoxCard2";
             this.pictureBoxCard2.Size = new System.Drawing.Size(100, 140);
             this.pictureBoxCard2.TabIndex = 1;
             this.pictureBoxCard2.TabStop = false;
+            this.pictureBoxCard2.Click += new System.EventHandler(this.pictureBoxCard2_Click);
             // 
             // pictureBoxCard3
             // 
-            this.pictureBoxCard3.Location = new System.Drawing.Point(290, 30);
+            this.pictureBoxCard3.Location = new System.Drawing.Point(295, 30);
+            this.pictureBoxCard3.MinimumSize = new System.Drawing.Size(100, 140);
             this.pictureBoxCard3.Name = "pictureBoxCard3";
             this.pictureBoxCard3.Size = new System.Drawing.Size(100, 140);
             this.pictureBoxCard3.TabIndex = 2;
             this.pictureBoxCard3.TabStop = false;
+            this.pictureBoxCard3.Click += new System.EventHandler(this.pictureBoxCard3_Click);
             // 
             // pictureBoxCard4
             // 
             this.pictureBoxCard4.Location = new System.Drawing.Point(420, 30);
+            this.pictureBoxCard4.MinimumSize = new System.Drawing.Size(100, 140);
             this.pictureBoxCard4.Name = "pictureBoxCard4";
             this.pictureBoxCard4.Size = new System.Drawing.Size(100, 140);
             this.pictureBoxCard4.TabIndex = 3;
             this.pictureBoxCard4.TabStop = false;
+            this.pictureBoxCard4.Click += new System.EventHandler(this.pictureBoxCard4_Click);
             // 
             // pictureBoxCard5
             // 
             this.pictureBoxCard5.Location = new System.Drawing.Point(550, 30);
+            this.pictureBoxCard5.MinimumSize = new System.Drawing.Size(100, 140);
             this.pictureBoxCard5.Name = "pictureBoxCard5";
             this.pictureBoxCard5.Size = new System.Drawing.Size(100, 140);
             this.pictureBoxCard5.TabIndex = 4;
             this.pictureBoxCard5.TabStop = false;
+            this.pictureBoxCard5.Click += new System.EventHandler(this.pictureBoxCard5_Click);
             // 
             // labelCard1
             // 
@@ -149,43 +159,49 @@
             // 
             // numericUpDownBet
             // 
-            this.numericUpDownBet.Increment = new decimal(new int[] {
+            this.numericUpDownBet.Location = new System.Drawing.Point(30, 220);
+            this.numericUpDownBet.Maximum = new decimal(new int[] {
             5,
             0,
             0,
             0});
-            this.numericUpDownBet.Location = new System.Drawing.Point(30, 220);
             this.numericUpDownBet.Minimum = new decimal(new int[] {
-            5,
+            1,
             0,
             0,
             0});
             this.numericUpDownBet.Name = "numericUpDownBet";
+            this.numericUpDownBet.ReadOnly = true;
             this.numericUpDownBet.Size = new System.Drawing.Size(100, 20);
             this.numericUpDownBet.TabIndex = 10;
+            this.numericUpDownBet.TabStop = false;
+            this.numericUpDownBet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDownBet.Value = new decimal(new int[] {
-            5,
+            1,
             0,
             0,
             0});
+            this.numericUpDownBet.ValueChanged += new System.EventHandler(this.numericUpDownBet_ValueChanged);
             // 
             // buttonBet
             // 
-            this.buttonBet.Location = new System.Drawing.Point(160, 220);
+            this.buttonBet.Location = new System.Drawing.Point(160, 210);
             this.buttonBet.Name = "buttonBet";
             this.buttonBet.Size = new System.Drawing.Size(100, 37);
             this.buttonBet.TabIndex = 11;
             this.buttonBet.Text = "Bet";
             this.buttonBet.UseVisualStyleBackColor = true;
+            this.buttonBet.Click += new System.EventHandler(this.buttonBet_Click);
             // 
             // buttonDraw
             // 
-            this.buttonDraw.Location = new System.Drawing.Point(290, 220);
+            this.buttonDraw.Location = new System.Drawing.Point(290, 210);
             this.buttonDraw.Name = "buttonDraw";
             this.buttonDraw.Size = new System.Drawing.Size(100, 37);
             this.buttonDraw.TabIndex = 12;
             this.buttonDraw.Text = "Draw";
             this.buttonDraw.UseVisualStyleBackColor = true;
+            this.buttonDraw.Click += new System.EventHandler(this.buttonDraw_Click);
             // 
             // labelAmountWon
             // 
@@ -210,9 +226,9 @@
             this.labelAmountWonCounter.AutoSize = true;
             this.labelAmountWonCounter.Location = new System.Drawing.Point(101, 290);
             this.labelAmountWonCounter.Name = "labelAmountWonCounter";
-            this.labelAmountWonCounter.Size = new System.Drawing.Size(14, 13);
+            this.labelAmountWonCounter.Size = new System.Drawing.Size(13, 13);
             this.labelAmountWonCounter.TabIndex = 15;
-            this.labelAmountWonCounter.Text = "#";
+            this.labelAmountWonCounter.Text = "0";
             // 
             // labelTotalCreditsCounter
             // 
@@ -245,59 +261,59 @@
             // 
             this.imageListCards.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListCards.ImageStream")));
             this.imageListCards.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListCards.Images.SetKeyName(0, "Ace_Clubs.bmp");
-            this.imageListCards.Images.SetKeyName(1, "Ace_Diamonds.bmp");
-            this.imageListCards.Images.SetKeyName(2, "Ace_Hearts.bmp");
-            this.imageListCards.Images.SetKeyName(3, "Ace_Spades.bmp");
-            this.imageListCards.Images.SetKeyName(4, "2_Clubs.bmp");
-            this.imageListCards.Images.SetKeyName(5, "2_Diamonds.bmp");
-            this.imageListCards.Images.SetKeyName(6, "2_Hearts.bmp");
-            this.imageListCards.Images.SetKeyName(7, "2_Spades.bmp");
-            this.imageListCards.Images.SetKeyName(8, "3_Clubs.bmp");
-            this.imageListCards.Images.SetKeyName(9, "3_Diamonds.bmp");
-            this.imageListCards.Images.SetKeyName(10, "3_Hearts.bmp");
-            this.imageListCards.Images.SetKeyName(11, "3_Spades.bmp");
-            this.imageListCards.Images.SetKeyName(12, "4_Clubs.bmp");
-            this.imageListCards.Images.SetKeyName(13, "4_Diamonds.bmp");
-            this.imageListCards.Images.SetKeyName(14, "4_Hearts.bmp");
-            this.imageListCards.Images.SetKeyName(15, "4_Spades.bmp");
-            this.imageListCards.Images.SetKeyName(16, "5_Clubs.bmp");
-            this.imageListCards.Images.SetKeyName(17, "5_Diamonds.bmp");
-            this.imageListCards.Images.SetKeyName(18, "5_Hearts.bmp");
-            this.imageListCards.Images.SetKeyName(19, "5_Spades.bmp");
-            this.imageListCards.Images.SetKeyName(20, "6_Clubs.bmp");
-            this.imageListCards.Images.SetKeyName(21, "6_Diamonds.bmp");
-            this.imageListCards.Images.SetKeyName(22, "6_Hearts.bmp");
-            this.imageListCards.Images.SetKeyName(23, "6_Spades.bmp");
-            this.imageListCards.Images.SetKeyName(24, "7_Clubs.bmp");
-            this.imageListCards.Images.SetKeyName(25, "7_Diamonds.bmp");
-            this.imageListCards.Images.SetKeyName(26, "7_Hearts.bmp");
-            this.imageListCards.Images.SetKeyName(27, "7_Spades.bmp");
-            this.imageListCards.Images.SetKeyName(28, "8_Clubs.bmp");
-            this.imageListCards.Images.SetKeyName(29, "8_Diamonds.bmp");
-            this.imageListCards.Images.SetKeyName(30, "8_Hearts.bmp");
-            this.imageListCards.Images.SetKeyName(31, "8_Spades.bmp");
-            this.imageListCards.Images.SetKeyName(32, "9_Clubs.bmp");
-            this.imageListCards.Images.SetKeyName(33, "9_Diamonds.bmp");
-            this.imageListCards.Images.SetKeyName(34, "9_Hearts.bmp");
-            this.imageListCards.Images.SetKeyName(35, "9_Spades.bmp");
-            this.imageListCards.Images.SetKeyName(36, "10_Clubs.bmp");
-            this.imageListCards.Images.SetKeyName(37, "10_Diamonds.bmp");
-            this.imageListCards.Images.SetKeyName(38, "10_Hearts.bmp");
-            this.imageListCards.Images.SetKeyName(39, "10_Spades.bmp");
-            this.imageListCards.Images.SetKeyName(40, "Jack_Clubs.bmp");
-            this.imageListCards.Images.SetKeyName(41, "Jack_Diamonds.bmp");
-            this.imageListCards.Images.SetKeyName(42, "Jack_Hearts.bmp");
-            this.imageListCards.Images.SetKeyName(43, "Jack_Spades.bmp");
-            this.imageListCards.Images.SetKeyName(44, "Queen_Clubs.bmp");
-            this.imageListCards.Images.SetKeyName(45, "Queen_Diamonds.bmp");
-            this.imageListCards.Images.SetKeyName(46, "Queen_Hearts.bmp");
-            this.imageListCards.Images.SetKeyName(47, "Queen_Spades.bmp");
-            this.imageListCards.Images.SetKeyName(48, "King_Clubs.bmp");
-            this.imageListCards.Images.SetKeyName(49, "King_Diamonds.bmp");
-            this.imageListCards.Images.SetKeyName(50, "King_Hearts.bmp");
-            this.imageListCards.Images.SetKeyName(51, "King_Spades.bmp");
-            this.imageListCards.Images.SetKeyName(52, "Backface_Blue.bmp");
+            this.imageListCards.Images.SetKeyName(0, "Ace_Clubs.jpg");
+            this.imageListCards.Images.SetKeyName(1, "Ace_Diamonds.jpg");
+            this.imageListCards.Images.SetKeyName(2, "Ace_Hearts.jpg");
+            this.imageListCards.Images.SetKeyName(3, "Ace_Spades.jpg");
+            this.imageListCards.Images.SetKeyName(4, "2_Clubs.jpg");
+            this.imageListCards.Images.SetKeyName(5, "2_Diamonds.jpg");
+            this.imageListCards.Images.SetKeyName(6, "2_Hearts.jpg");
+            this.imageListCards.Images.SetKeyName(7, "2_Spades.jpg");
+            this.imageListCards.Images.SetKeyName(8, "3_Clubs.jpg");
+            this.imageListCards.Images.SetKeyName(9, "3_Diamonds.jpg");
+            this.imageListCards.Images.SetKeyName(10, "3_Hearts.jpg");
+            this.imageListCards.Images.SetKeyName(11, "3_Spades.jpg");
+            this.imageListCards.Images.SetKeyName(12, "4_Clubs.jpg");
+            this.imageListCards.Images.SetKeyName(13, "4_Diamonds.jpg");
+            this.imageListCards.Images.SetKeyName(14, "4_Hearts.jpg");
+            this.imageListCards.Images.SetKeyName(15, "4_Spades.jpg");
+            this.imageListCards.Images.SetKeyName(16, "5_Clubs.jpg");
+            this.imageListCards.Images.SetKeyName(17, "5_Diamonds.jpg");
+            this.imageListCards.Images.SetKeyName(18, "5_Hearts.jpg");
+            this.imageListCards.Images.SetKeyName(19, "5_Spades.jpg");
+            this.imageListCards.Images.SetKeyName(20, "6_Clubs.jpg");
+            this.imageListCards.Images.SetKeyName(21, "6_Diamonds.jpg");
+            this.imageListCards.Images.SetKeyName(22, "6_Hearts.jpg");
+            this.imageListCards.Images.SetKeyName(23, "6_Spades.jpg");
+            this.imageListCards.Images.SetKeyName(24, "7_Clubs.jpg");
+            this.imageListCards.Images.SetKeyName(25, "7_Diamonds.jpg");
+            this.imageListCards.Images.SetKeyName(26, "7_Hearts.jpg");
+            this.imageListCards.Images.SetKeyName(27, "7_Spades.jpg");
+            this.imageListCards.Images.SetKeyName(28, "8_Clubs.jpg");
+            this.imageListCards.Images.SetKeyName(29, "8_Diamonds.jpg");
+            this.imageListCards.Images.SetKeyName(30, "8_Hearts.jpg");
+            this.imageListCards.Images.SetKeyName(31, "8_Spades.jpg");
+            this.imageListCards.Images.SetKeyName(32, "9_Clubs.jpg");
+            this.imageListCards.Images.SetKeyName(33, "9_Diamonds.jpg");
+            this.imageListCards.Images.SetKeyName(34, "9_Hearts.jpg");
+            this.imageListCards.Images.SetKeyName(35, "9_Spades.jpg");
+            this.imageListCards.Images.SetKeyName(36, "10_Clubs.jpg");
+            this.imageListCards.Images.SetKeyName(37, "10_Diamonds.jpg");
+            this.imageListCards.Images.SetKeyName(38, "10_Hearts.jpg");
+            this.imageListCards.Images.SetKeyName(39, "10_Spades.jpg");
+            this.imageListCards.Images.SetKeyName(40, "Jack_Clubs.jpg");
+            this.imageListCards.Images.SetKeyName(41, "Jack_Diamonds.jpg");
+            this.imageListCards.Images.SetKeyName(42, "Jack_Hearts.jpg");
+            this.imageListCards.Images.SetKeyName(43, "Jack_Spades.jpg");
+            this.imageListCards.Images.SetKeyName(44, "Queen_Clubs.jpg");
+            this.imageListCards.Images.SetKeyName(45, "Queen_Diamonds.jpg");
+            this.imageListCards.Images.SetKeyName(46, "Queen_Hearts.jpg");
+            this.imageListCards.Images.SetKeyName(47, "Queen_Spades.jpg");
+            this.imageListCards.Images.SetKeyName(48, "King_Clubs.jpg");
+            this.imageListCards.Images.SetKeyName(49, "King_Diamonds.jpg");
+            this.imageListCards.Images.SetKeyName(50, "King_Hearts.jpg");
+            this.imageListCards.Images.SetKeyName(51, "King_Spades.jpg");
+            this.imageListCards.Images.SetKeyName(52, "Backface_Blue.jpg");
             // 
             // dataGridViewScoringInfo
             // 
@@ -307,24 +323,24 @@
             this.dataGridViewScoringInfo.AllowUserToResizeRows = false;
             this.dataGridViewScoringInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewScoringInfo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewScoringInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewScoringInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewScoringInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewScoringInfo.ColumnHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewScoringInfo.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewScoringInfo.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewScoringInfo.Enabled = false;
             this.dataGridViewScoringInfo.Location = new System.Drawing.Point(30, 360);
             this.dataGridViewScoringInfo.MultiSelect = false;

@@ -41,7 +41,7 @@ namespace Moon_Asg3_Poker
         /// and returns the 'drawn' card.
         /// </summary>
         /// <returns>The card drawn from the deck.</returns>
-        private Card drawCard()
+        public Card drawCard()
         {
             Card card = new Card();
 
