@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBoxCard1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxCard2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxCard3 = new System.Windows.Forms.PictureBox();
@@ -50,7 +50,6 @@
             this.labelAmountWonCounter = new System.Windows.Forms.Label();
             this.labelTotalCreditsCounter = new System.Windows.Forms.Label();
             this.labelDescription = new System.Windows.Forms.Label();
-            this.labelBetAmount = new System.Windows.Forms.Label();
             this.imageListCards = new System.Windows.Forms.ImageList(this.components);
             this.dataGridViewScoringInfo = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCard1)).BeginInit();
@@ -248,15 +247,6 @@
             this.labelDescription.TabIndex = 17;
             this.labelDescription.Text = "Description";
             // 
-            // labelBetAmount
-            // 
-            this.labelBetAmount.AutoSize = true;
-            this.labelBetAmount.Location = new System.Drawing.Point(292, 265);
-            this.labelBetAmount.Name = "labelBetAmount";
-            this.labelBetAmount.Size = new System.Drawing.Size(81, 13);
-            this.labelBetAmount.TabIndex = 18;
-            this.labelBetAmount.Text = "labelBetAmount";
-            // 
             // imageListCards
             // 
             this.imageListCards.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListCards.ImageStream")));
@@ -323,24 +313,24 @@
             this.dataGridViewScoringInfo.AllowUserToResizeRows = false;
             this.dataGridViewScoringInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewScoringInfo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewScoringInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewScoringInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewScoringInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewScoringInfo.ColumnHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewScoringInfo.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewScoringInfo.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewScoringInfo.Enabled = false;
             this.dataGridViewScoringInfo.Location = new System.Drawing.Point(30, 360);
             this.dataGridViewScoringInfo.MultiSelect = false;
@@ -363,7 +353,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 544);
             this.Controls.Add(this.dataGridViewScoringInfo);
-            this.Controls.Add(this.labelBetAmount);
             this.Controls.Add(this.labelDescription);
             this.Controls.Add(this.labelTotalCreditsCounter);
             this.Controls.Add(this.labelAmountWonCounter);
@@ -417,7 +406,6 @@
         private System.Windows.Forms.Label labelAmountWonCounter;
         private System.Windows.Forms.Label labelTotalCreditsCounter;
         private System.Windows.Forms.Label labelDescription;
-        private System.Windows.Forms.Label labelBetAmount;
         private System.Windows.Forms.ImageList imageListCards;
         private System.Windows.Forms.DataGridView dataGridViewScoringInfo;
     }

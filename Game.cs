@@ -21,12 +21,15 @@ namespace Moon_Asg3_Poker
 
         private int credits = 100;
 
-        public int Credits { get => credits; set => credits = value; }
+        public int Credits { get => credits; }
 
         public Game()
         {
+            // initialize hand and deck
             hand = new Hand();
             deck = new Deck();
+
+            // populate the heldStates and cardImageIndices lists with 5 items each
             for (int i = 0; i < 5; i++)
             {
                 heldStates.Add(false);
@@ -34,17 +37,21 @@ namespace Moon_Asg3_Poker
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bet"></param>
         public void startRound(int bet)
         {
             // Deduct 'bet' number of credits
             deductCredits(bet);
 
-            // Reset the deck and deal 5 cards from it
+            // Reset (shuffle) the deck and deal 5 cards from it
             deck.resetDeck();
             List<Card> dealtCards = deck.dealPokerHand();
             hand = new Hand(dealtCards);
 
-            // Retain image indices of the drawn cards
+            // Reset held states and retain image indices of the drawn cards
             for (int i = 0; i < 5; i++)
             {
                 heldStates[i] = false;
@@ -75,19 +82,31 @@ namespace Moon_Asg3_Poker
                 addCredits(winnings);
         }
 
-        private void deductCredits(int amount)
+        /// <summary>
+        /// Remove a number of credits from the total.
+        /// </summary>
+        /// <param name="number">The number of credits to remove.</param>
+        private void deductCredits(int number)
         {
-            credits -= amount;
+            credits -= number;
         }
 
-        private void addCredits(int amount)
+        /// <summary>
+        /// Add a number of credits to the total.
+        /// </summary>
+        /// <param name="number">The number of credits to add.</param>
+        private void addCredits(int number)
         {
-            credits += amount;
+            credits += number;
         }
 
+        /// <summary>
+        /// Inverts a card's held state at a specified position.
+        /// </summary>
+        /// <param name="cardIndex">The card position/index that should have its held state toggled.</param>
         public void toggleCardHeldState(int cardIndex)
         {
-            heldStates[cardIndex] = !heldStates[cardIndex];
+            heldStates[cardIndex] ^= true;
         }
 
 

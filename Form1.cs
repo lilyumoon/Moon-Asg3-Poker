@@ -80,6 +80,7 @@ namespace Moon_Asg3_Poker
             {
                 labelHeldList[i].Visible = false;
                 pictureBoxList[i].Enabled = false;
+                pictureBoxList[i].Image = imageListCards.Images[52];
             }
         }
 
