@@ -18,6 +18,8 @@ namespace Moon_Asg3_Poker
         List<PictureBox> pictureBoxList;
         List<Label> labelHeldList;
 
+        Task colorTransition;
+
         public Form1()
         {
             InitializeComponent();
@@ -66,10 +68,54 @@ namespace Moon_Asg3_Poker
             table.Rows.Add("TWO PAIR.....................................................................", 2, 4, 6, 8, 10);
             table.Rows.Add("JACKS OR BETTER.......................................................", 1, 2, 3, 4, 5);
 
-            dataGridViewScoringInfo.DataSource = table;
+            dgvScoringInfo.DataSource = table;
 
-            foreach (DataGridViewColumn column in dataGridViewScoringInfo.Columns)
+            foreach (DataGridViewColumn column in dgvScoringInfo.Columns)
                 column.MinimumWidth = 69;
+        }
+
+        /// <summary>
+        /// Transitions a specified row's color over a specified duration, then changes it back to its initial color.
+        /// </summary>
+        /// <param name="rowIndex">The index of the data grid view's row to transition the color of.</param>
+        /// <param name="duration">The time in ms over which the transition will occur.</param>
+        /// <returns>A task representing the async operation of transitioning a specified row's color.
+        /// The task completes when the color transition finishes.</returns>
+        private async Task transitionRowColor(int rowIndex, int duration)
+        {
+            Color startColor = dgvScoringInfo.Rows[rowIndex].DefaultCellStyle.BackColor;
+            Color endColor = Color.Goldenrod;
+
+            int steps = 10; // number of steps between startColor and endColor
+            int delay = duration / steps; // time to wait between steps
+
+            for (int i = 0; i <= steps; i++)
+            {
+                float interpolationFactor = (float)i / steps; // this will be between 0 and 1 depending on step progress
+                Color interpolatedColor = getInterpolatedColor(startColor, endColor, interpolationFactor);
+                dgvScoringInfo.Rows[rowIndex].DefaultCellStyle.BackColor = interpolatedColor;
+
+                // Refresh the datagridview to see the new color-step
+                dgvScoringInfo.Refresh();
+                // Wait for 'delay' number of ms before finishing loop iteration
+                await Task.Delay(delay);
+                dgvScoringInfo.Rows[rowIndex].DefaultCellStyle.BackColor = Color.White;
+            }
+        }
+
+        private Color getInterpolatedColor(Color startColor, Color endColor, float interpolationFactor)
+        {
+            Color interpolatedColor;
+            
+            // Calculate each interpolated color component based on start/end colors and interpolation factor
+            int r = (int)(startColor.R + (endColor.R - startColor.R) * interpolationFactor);
+            int g = (int)(startColor.G + (endColor.G - startColor.G) * interpolationFactor);
+            int b = (int)(startColor.B + (endColor.B - startColor.B) * interpolationFactor);
+
+            // Combine each interpolated color component to create the interpolated color
+            interpolatedColor = Color.FromArgb(r, g, b);
+
+            return interpolatedColor;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -86,7 +132,8 @@ namespace Moon_Asg3_Poker
 
         private void buttonBet_Click(object sender, EventArgs e)
         {
-
+            if (null != colorTransition)
+                colorTransition.Dispose();
             // Get the 'bet' number from the UpDown control
             int bet = (int)numericUpDownBet.Value;
             // Tell game object to do the game logic side of 'Bet'
@@ -100,7 +147,7 @@ namespace Moon_Asg3_Poker
             buttonBet.Enabled = false;
             buttonDraw.Enabled = true;
             validateBetValue();
-            foreach (DataGridViewRow row in dataGridViewScoringInfo.Rows)
+            foreach (DataGridViewRow row in dgvScoringInfo.Rows)
                 row.DefaultCellStyle.BackColor = Color.White;
 
             // Assign drawn card images and enable ability to mark as 'held'
@@ -146,7 +193,7 @@ namespace Moon_Asg3_Poker
                 // Funnel all face card pair results into "jacks or better"
                 if (tableIndex >= 8)
                     tableIndex = 8;
-                dataGridViewScoringInfo.Rows[tableIndex].DefaultCellStyle.BackColor = Color.LightGoldenrodYellow;
+                colorTransition = transitionRowColor(tableIndex, 50);
             }
 
             // Update credits and modify control interactability
@@ -162,30 +209,30 @@ namespace Moon_Asg3_Poker
         // Handlers for the Card pictureboxes' 'Click' events
         private void pictureBoxCard1_Click(object sender, EventArgs e)
         {
-            toggleHeld(0);
+            toggleHeldState(0);
         }
 
         private void pictureBoxCard2_Click(object sender, EventArgs e)
         {
-            toggleHeld(1);
+            toggleHeldState(1);
         }
 
         private void pictureBoxCard3_Click(object sender, EventArgs e)
         {
-            toggleHeld(2);
+            toggleHeldState(2);
         }
 
         private void pictureBoxCard4_Click(object sender, EventArgs e)
         {
-            toggleHeld(3);
+            toggleHeldState(3);
         }
 
         private void pictureBoxCard5_Click(object sender, EventArgs e)
         {
-            toggleHeld(4);
+            toggleHeldState(4);
         }
 
-        private void toggleHeld(int index)
+        private void toggleHeldState(int index)
         {
             game.toggleCardHeldState(index);
             // invert the 'held' label visibility state
