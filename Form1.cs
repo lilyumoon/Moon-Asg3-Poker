@@ -18,7 +18,7 @@ namespace Moon_Asg3_Poker
         List<PictureBox> pictureBoxList;
         List<Label> labelHeldList;
 
-        Task colorTransition;
+        // Task colorTransition;
 
         public Form1()
         {
@@ -95,8 +95,6 @@ namespace Moon_Asg3_Poker
                 Color interpolatedColor = getInterpolatedColor(startColor, endColor, interpolationFactor);
                 dgvScoringInfo.Rows[rowIndex].DefaultCellStyle.BackColor = interpolatedColor;
 
-                // Refresh the datagridview to see the new color-step
-                dgvScoringInfo.Refresh();
                 // Wait for 'delay' number of ms before finishing loop iteration
                 await Task.Delay(delay);
                 dgvScoringInfo.Rows[rowIndex].DefaultCellStyle.BackColor = Color.White;
@@ -132,8 +130,6 @@ namespace Moon_Asg3_Poker
 
         private void buttonBet_Click(object sender, EventArgs e)
         {
-            if (null != colorTransition)
-                colorTransition.Dispose();
             // Get the 'bet' number from the UpDown control
             int bet = (int)numericUpDownBet.Value;
             // Tell game object to do the game logic side of 'Bet'
@@ -150,18 +146,14 @@ namespace Moon_Asg3_Poker
             foreach (DataGridViewRow row in dgvScoringInfo.Rows)
                 row.DefaultCellStyle.BackColor = Color.White;
 
-            // Assign drawn card images and enable ability to mark as 'held'
+            // Assign drawn card images, enable ability to mark as 'held', and reset 'held' labels
             for (int i = 0; i < 5; i++)
             {
                 int cardImageIndex = game.cardImageIndices[i];
                 pictureBoxList[i].Image = imageListCards.Images[cardImageIndex];
                 pictureBoxList[i].Enabled = true;
+                labelHeldList[i].Visible = false;
             }
-
-            // reset any 'held' labels
-            foreach (Label label in labelHeldList)
-                label.Visible = false;
-
         }
 
         /// <summary>
@@ -193,7 +185,8 @@ namespace Moon_Asg3_Poker
                 // Funnel all face card pair results into "jacks or better"
                 if (tableIndex >= 8)
                     tableIndex = 8;
-                colorTransition = transitionRowColor(tableIndex, 50);
+                //transitionRowColor(tableIndex, 200);
+                dgvScoringInfo.Rows[tableIndex].DefaultCellStyle.BackColor = Color.LightGoldenrodYellow;
             }
 
             // Update credits and modify control interactability
