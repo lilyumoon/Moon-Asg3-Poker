@@ -128,11 +128,15 @@ namespace Moon_Asg3_Poker
             }
         }
 
+        /// <summary>
+        /// Event handler for Bet button's click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonBet_Click(object sender, EventArgs e)
         {
-            // Get the 'bet' number from the UpDown control
+            // Get the 'bet' number from the UpDown control and tell 'game' to do game logic 
             int bet = (int)numericUpDownBet.Value;
-            // Tell game object to do the game logic side of 'Bet'
             game.startRound(bet);
 
             // Update credits and controls
@@ -157,19 +161,15 @@ namespace Moon_Asg3_Poker
         }
 
         /// <summary>
-        /// Handler for the Draw button.
+        /// Event for the Draw button's click event.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void buttonDraw_Click(object sender, EventArgs e)
         {
-            // Tell game object to do the game logic side of 'Draw'
+            // Tell 'game' object to do game logic
             game.completeRound((int)numericUpDownBet.Value, out string handResult, out int winnings);
             
-            // Update hand result and amount won labels
-            labelHandResult.Text = handResult;
-            labelAmountWonCounter.Text = winnings.ToString();
-
             // Update card images and disable ability to mark as 'held'
             for (int i = 0; i < 5; i++)
             {
@@ -177,22 +177,24 @@ namespace Moon_Asg3_Poker
                 pictureBoxList[i].Enabled = false;
             }
 
-            // If the hand won, highlight how it won in the scoring info table
+            // Update credits and modify control interactability
+            labelTotalCreditsCounter.Text = game.Credits.ToString();
+            labelHandResult.Text = handResult;
+            labelAmountWonCounter.Text = winnings.ToString();
+            numericUpDownBet.Enabled = true;
+            buttonDraw.Enabled = false;
+
+            // If the hand did not lose, highlight how it won in the scoring info table
             if (handResult != "You lost your bet")
             {
                 int tableIndex = 0;
                 tableIndex = game.possibleHandResults.IndexOf(handResult);
-                // Funnel all face card pair results into "jacks or better"
+                // Simplify all "face card pair" results into "jacks or better"
                 if (tableIndex >= 8)
                     tableIndex = 8;
                 //transitionRowColor(tableIndex, 200);
                 dgvScoringInfo.Rows[tableIndex].DefaultCellStyle.BackColor = Color.LightGoldenrodYellow;
             }
-
-            // Update credits and modify control interactability
-            labelTotalCreditsCounter.Text = game.Credits.ToString();
-            numericUpDownBet.Enabled = true;
-            buttonDraw.Enabled = false;
 
             // Disable Bet button if there are no credits available to bet
             if (game.Credits > 0)
@@ -200,35 +202,23 @@ namespace Moon_Asg3_Poker
         }
 
         // Handlers for the Card pictureboxes' 'Click' events
-        private void pictureBoxCard1_Click(object sender, EventArgs e)
-        {
-            toggleHeldState(0);
-        }
+        private void pictureBoxCard1_Click(object sender, EventArgs e) { toggleHeldState(0); }
 
-        private void pictureBoxCard2_Click(object sender, EventArgs e)
-        {
-            toggleHeldState(1);
-        }
+        private void pictureBoxCard2_Click(object sender, EventArgs e) { toggleHeldState(1); }
 
-        private void pictureBoxCard3_Click(object sender, EventArgs e)
-        {
-            toggleHeldState(2);
-        }
+        private void pictureBoxCard3_Click(object sender, EventArgs e) { toggleHeldState(2); }
 
-        private void pictureBoxCard4_Click(object sender, EventArgs e)
-        {
-            toggleHeldState(3);
-        }
+        private void pictureBoxCard4_Click(object sender, EventArgs e) { toggleHeldState(3); }
 
-        private void pictureBoxCard5_Click(object sender, EventArgs e)
-        {
-            toggleHeldState(4);
-        }
+        private void pictureBoxCard5_Click(object sender, EventArgs e) { toggleHeldState(4); }
 
+        /// <summary>
+        /// Inverts the 'held' state of a particular card and updates the UI to reflect it.
+        /// </summary>
+        /// <param name="index">The index of the card to toggle the held state of.</param>
         private void toggleHeldState(int index)
         {
             game.toggleCardHeldState(index);
-            // invert the 'held' label visibility state
             labelHeldList[index].Visible ^= true;
         }
 
