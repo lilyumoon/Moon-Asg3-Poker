@@ -69,3 +69,33 @@ Classes:
 		Properties:
 			* credits
 			* bet
+
+
+======= Feedback Questions:
+
+1: What is not working correctly in your code?
+	* As far as I know, all features currently work correctly.
+	* There are a couple of methods in Form.cs that I wrote but did not use,
+	* with the thought that it might look neat to ease the color transition
+	* of the highlighted scoring table entry, but it looked kinda clunky and I couldn't justify the time
+	* to try to brush up on threading and time-slicing (I can't remember the right term right now).
+
+
+2: What did this assignment teach you about Classes?
+	* I think this assignment helped to reinforce the idea that classes should be separated based on
+	* having a single / thematic responsibility
+
+
+3: What was the most difficult part for you of this assignment?
+	* I'm still getting used to navigating the features of the Design editor.
+	* A lot of things that I would have a tendency to set programatically, 
+	* I've found can be set within the Design editor. I'm trying to lean into that.
+
+
+4: Did I show too much code in the tips and videos? 
+	* I don't think so.
+
+
+5: Do you understand the difference between getters and setters vs properties?
+	* Instead of calling getters and setters directly, properties can be used to encapsulate
+	* those methods and make them publically available. Getters and setters can provide opportunities to custom implement access to fields.
