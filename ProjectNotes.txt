@@ -1,3 +1,15 @@
+======= Lily Moon
+======= Assignment 3 - Video Poker
+======= Advanced .NET
+*
+*
+*
+======= May be incomplete or outdated.
+======= This is a living document, not a thriving document. :)
+*
+*
+*
+
 Grading:
 	B:
 		*The Game must keep track of the Players balance.

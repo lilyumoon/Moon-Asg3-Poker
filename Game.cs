@@ -13,6 +13,9 @@ namespace Moon_Asg3_Poker
         /// The list of bools correlating to the 'held' state of each Card in the cards list.
         /// </summary>
         private List<bool> heldStates = new List<bool>();
+
+        // Holds a record of the card image indices for each hand
+        // so the Form can access them for UI updates
         public List<int> cardImageIndices = new List<int>();
 
         private Hand hand;
@@ -20,7 +23,6 @@ namespace Moon_Asg3_Poker
         private PokerScore pokerScore;
 
         private int credits = 100;
-
         public int Credits { get => credits; }
 
         /// <summary>
@@ -82,16 +84,16 @@ namespace Moon_Asg3_Poker
 
         /// <summary>
         /// Method to handle the game-side logic when the 'draw' button is pressed.
-        /// Signals to the hand.cs class if any cards should be replaced.
+        /// Signals to the Hand.cs class if any cards should be replaced.
         /// Uses the PokerScore class to score the resulting hand and passes the
-        /// winnings (and adds to credits if any) and the hand result message out.
+        /// winnings and hand result message out. Adds winnings to credits.
         /// </summary>
         /// <param name="bet">The number of credits bet.</param>
         /// <param name="handResult">The result of the hand.</param>
         /// <param name="winnings">The number of credits won (if any).</param>
         public void completeRound(int bet, out string handResult, out int winnings)
         {
-            // Replace any cards not marked to be held
+            // Replace any cards not marked to be held with new cards
             for (int i = 0; i < heldStates.Count; i++)
             {
                 bool shouldBeReplaced = !heldStates[i];
@@ -103,7 +105,7 @@ namespace Moon_Asg3_Poker
                 }
             }
 
-            // Convert cards to rankSuit representation so they can be processed by PokerScore
+            // Convert cards to rankSuit representation for scoring by PokerScore
             List<string> rankSuits = hand.getRankSuits();
             pokerScore = new PokerScore(rankSuits[0], rankSuits[1], rankSuits[2], rankSuits[3], rankSuits[4]);
 

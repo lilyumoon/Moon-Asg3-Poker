@@ -26,6 +26,9 @@ namespace Moon_Asg3_Poker
             setup();
         }
 
+        /// <summary>
+        /// Performs initial data population operations.
+        /// </summary>
         private void setup()
         {
             populateScoringTable();
@@ -47,6 +50,9 @@ namespace Moon_Asg3_Poker
             };
         }
 
+        /// <summary>
+        /// Populates the payout reference data contained in the scoring table.
+        /// </summary>
         private void populateScoringTable()
         {
             DataTable table = new DataTable();
@@ -70,9 +76,14 @@ namespace Moon_Asg3_Poker
 
             dgvScoringInfo.DataSource = table;
 
+            // Added this formatting logic here because it was difficult to find in the Design editor...
             foreach (DataGridViewColumn column in dgvScoringInfo.Columns)
                 column.MinimumWidth = 69;
         }
+
+        /*
+         * Did not end up using the next 2 methods.
+         */
 
         /// <summary>
         /// Transitions a specified row's color over a specified duration, then changes it back to its initial color.
@@ -101,6 +112,13 @@ namespace Moon_Asg3_Poker
             }
         }
 
+        /// <summary>
+        /// Calculates a new color based on a linear interpolation between a start and end color.
+        /// </summary>
+        /// <param name="startColor">The color to start from.</param>
+        /// <param name="endColor">The color to end at.</param>
+        /// <param name="interpolationFactor">A value between 0 and 1 determining the interpolation degree.</param>
+        /// <returns></returns>
         private Color getInterpolatedColor(Color startColor, Color endColor, float interpolationFactor)
         {
             Color interpolatedColor;
@@ -116,6 +134,11 @@ namespace Moon_Asg3_Poker
             return interpolatedColor;
         }
 
+        /// <summary>
+        /// Event handler for the Form's load event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
             labelTotalCreditsCounter.Text = game.Credits.ToString();
@@ -201,7 +224,9 @@ namespace Moon_Asg3_Poker
                 buttonBet.Enabled = true;
         }
 
-        // Handlers for the Card pictureboxes' 'Click' events
+        /* 
+         * Handlers for the Card pictureboxes' 'Click' events.
+         */
         private void pictureBoxCard1_Click(object sender, EventArgs e) { toggleHeldState(0); }
 
         private void pictureBoxCard2_Click(object sender, EventArgs e) { toggleHeldState(1); }
