@@ -16,7 +16,9 @@ namespace Moon_Asg3_Poker
 
         // Holds a record of the card image indices for each hand
         // so the Form can access them for UI updates
-        public List<int> cardImageIndices = new List<int>();
+        private List<int> cardImageIndices = new List<int>();
+
+        public List<int> CardImageIndices { get => cardImageIndices; }
 
         private Hand hand;
         private Deck deck;

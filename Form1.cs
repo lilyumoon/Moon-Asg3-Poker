@@ -176,7 +176,7 @@ namespace Moon_Asg3_Poker
             // Assign drawn card images, enable ability to mark as 'held', and reset 'held' labels
             for (int i = 0; i < 5; i++)
             {
-                int cardImageIndex = game.cardImageIndices[i];
+                int cardImageIndex = game.CardImageIndices[i];
                 pictureBoxList[i].Image = imageListCards.Images[cardImageIndex];
                 pictureBoxList[i].Enabled = true;
                 labelHeldList[i].Visible = false;
@@ -196,7 +196,7 @@ namespace Moon_Asg3_Poker
             // Update card images and disable ability to mark as 'held'
             for (int i = 0; i < 5; i++)
             {
-                pictureBoxList[i].Image = imageListCards.Images[game.cardImageIndices[i]];
+                pictureBoxList[i].Image = imageListCards.Images[game.CardImageIndices[i]];
                 pictureBoxList[i].Enabled = false;
             }
 
