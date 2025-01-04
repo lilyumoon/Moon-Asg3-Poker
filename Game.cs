@@ -30,7 +30,7 @@ namespace Moon_Asg3_Poker
         /// <summary>
         /// Stores all possible handResult messages from PokerScore's scoreHand method in a list.
         /// </summary>
-        public List<string> possibleHandResults = new List<string>
+        private List<string> possibleHandResults = new List<string>
         {
             "Royal Flush (1000 to 1)",
             "Straight Flush (500 to 1)",
@@ -46,6 +46,8 @@ namespace Moon_Asg3_Poker
             "Pair of Aces (Even Money)",
             "You lost your bet"
         };
+
+        public List<string> PossibleHandResults { get => possibleHandResults; }
 
         public Game()
         {

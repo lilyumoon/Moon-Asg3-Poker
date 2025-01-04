@@ -141,6 +141,7 @@ namespace Moon_Asg3_Poker
         /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Do various UI initializations
             labelTotalCreditsCounter.Text = game.Credits.ToString();
             buttonDraw.Enabled = false;
             for (int i = 0; i < 5; i++)
@@ -162,7 +163,7 @@ namespace Moon_Asg3_Poker
             int bet = (int)numericUpDownBet.Value;
             game.startRound(bet);
 
-            // Update credits and controls
+            // Update UI to reflect the state of a hand currently being in progress
             labelTotalCreditsCounter.Text = game.Credits.ToString();
             labelAmountWonCounter.Text = string.Empty;
             labelHandResult.Text = string.Empty;
@@ -173,13 +174,23 @@ namespace Moon_Asg3_Poker
             foreach (DataGridViewRow row in dgvScoringInfo.Rows)
                 row.DefaultCellStyle.BackColor = Color.White;
 
-            // Assign drawn card images, enable ability to mark as 'held', and reset 'held' labels
+            // Update card images
+            updateCardImages();
+
+            // Enable ability to mark as 'held' and reset 'held' labels
+            for (int i = 0; i < 5; i++)
+            {
+                pictureBoxList[i].Enabled = true;
+                labelHeldList[i].Visible = false;
+            }
+        }
+
+        private void updateCardImages()
+        {
             for (int i = 0; i < 5; i++)
             {
                 int cardImageIndex = game.CardImageIndices[i];
                 pictureBoxList[i].Image = imageListCards.Images[cardImageIndex];
-                pictureBoxList[i].Enabled = true;
-                labelHeldList[i].Visible = false;
             }
         }
 
@@ -192,11 +203,13 @@ namespace Moon_Asg3_Poker
         {
             // Tell 'game' object to do game logic
             game.completeRound((int)numericUpDownBet.Value, out string handResult, out int winnings);
+
+            // Update card images
+            updateCardImages();
             
-            // Update card images and disable ability to mark as 'held'
+            // Disable ability to mark cards as 'held'
             for (int i = 0; i < 5; i++)
             {
-                pictureBoxList[i].Image = imageListCards.Images[game.CardImageIndices[i]];
                 pictureBoxList[i].Enabled = false;
             }
 
@@ -211,7 +224,7 @@ namespace Moon_Asg3_Poker
             if (handResult != "You lost your bet")
             {
                 int tableIndex = 0;
-                tableIndex = game.possibleHandResults.IndexOf(handResult);
+                tableIndex = game.PossibleHandResults.IndexOf(handResult);
                 // Simplify all "face card pair" results into "jacks or better"
                 if (tableIndex >= 8)
                     tableIndex = 8;
